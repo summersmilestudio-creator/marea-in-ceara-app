@@ -8,7 +8,7 @@ workflows:
       xcode: latest
       cocoapods: default
       groups:
-        - app_store_credentials
+        - default
       vars:
         BUNDLE_ID: "ro.mareainceara.shop"
         XCODE_WORKSPACE: "Runner.xcworkspace"
