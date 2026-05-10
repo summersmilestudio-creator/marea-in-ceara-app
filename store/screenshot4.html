@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 1920px; overflow: hidden; background: #1A1A1A; font-family: 'Playfair Display', Georgia, serif; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.text-top { color: #fff; text-align: center; margin-bottom: 40px; }
+.text-top h2 { font-size: 48px; font-weight: 600; margin-bottom: 12px; }
+.text-top h2 span { color: #D4A574; }
+.text-top p { font-family: 'Inter', sans-serif; font-size: 24px; color: rgba(255,255,255,0.5); }
+.phone-frame { width: 380px; height: 760px; background: #333; border-radius: 40px; padding: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.phone-screen { width: 100%; height: 100%; background: #FAFAF8; border-radius: 32px; overflow: hidden; display: flex; flex-direction: column; }
+.confirm-header { background: #1A1A1A; color: #fff; padding: 30px 20px; text-align: center; }
+.confirm-header .check { font-size: 60px; margin-bottom: 12px; }
+.confirm-header h2 { font-size: 22px; font-weight: 500; letter-spacing: 1px; }
+.confirm-header p { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+.order-details { padding: 20px; flex: 1; }
+.order-section { margin-bottom: 20px; }
+.order-label { font-family: 'Inter', sans-serif; font-size: 11px; color: #B8B5B0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.order-box { background: #fff; border-radius: 12px; padding: 16px; border: 1px solid #F2F0ED; }
+.order-row { display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 13px; color: #666; margin-bottom: 6px; }
+.order-row:last-child { margin-bottom: 0; }
+.order-row strong { color: #1A1A1A; }
+.order-row .highlight { color: #D4A574; font-weight: 600; }
+.tracking { background: #fff; border-radius: 12px; padding: 16px; border: 1px solid #F2F0ED; }
+.track-step { display: flex; gap: 12px; margin-bottom: 14px; }
+.track-dot { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+.track-dot.done { background: #D4A574; color: #fff; }
+.track-dot.pending { background: #F2F0ED; color: #B8B5B0; }
+.track-text { font-family: 'Inter', sans-serif; font-size: 13px; color: #1A1A1A; }
+.track-text small { display: block; font-size: 11px; color: #B8B5B0; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="text-top">
+    <h2>Livrare în <span>toată România</span></h2>
+    <p>Transport gratuit peste 250 RON</p>
+</div>
+<div class="phone-frame">
+    <div class="phone-screen">
+        <div class="confirm-header">
+            <div class="check">✓</div>
+            <h2>Comandă confirmată!</h2>
+            <p>Comanda #MC-2026-0412</p>
+        </div>
+        <div class="order-details">
+            <div class="order-section">
+                <div class="order-label">Detalii comandă</div>
+                <div class="order-box">
+                    <div class="order-row"><span>Produse</span><strong>3 articole</strong></div>
+                    <div class="order-row"><span>Subtotal</span><strong>296 RON</strong></div>
+                    <div class="order-row"><span>Livrare</span><span style="color:#4caf50;font-weight:600;">GRATUITĂ</span></div>
+                    <div class="order-row"><span>Total</span><span class="highlight">296 RON</span></div>
+                </div>
+            </div>
+            <div class="order-section">
+                <div class="order-label">Status livrare</div>
+                <div class="tracking">
+                    <div class="track-step">
+                        <div class="track-dot done">✓</div>
+                        <div class="track-text">Comandă plasată<small>3 apr 2026, 14:32</small></div>
+                    </div>
+                    <div class="track-step">
+                        <div class="track-dot done">✓</div>
+                        <div class="track-text">Pregătire colet<small>3 apr 2026, 16:00</small></div>
+                    </div>
+                    <div class="track-step">
+                        <div class="track-dot pending">3</div>
+                        <div class="track-text">Predat curierului<small>Estimat: 4 apr</small></div>
+                    </div>
+                    <div class="track-step">
+                        <div class="track-dot pending">4</div>
+                        <div class="track-text">Livrat<small>Estimat: 5-6 apr</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

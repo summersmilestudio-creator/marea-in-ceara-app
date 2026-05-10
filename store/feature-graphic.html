@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1024px; height: 500px; overflow: hidden; }
+.container {
+    width: 1024px; height: 500px;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2a2a2a 50%, #1A1A1A 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    position: relative; overflow: hidden;
+}
+.bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; font-size: 300px; display: flex; align-items: center; justify-content: center; }
+.content { display: flex; align-items: center; gap: 50px; z-index: 1; padding: 0 80px; }
+.logo-box {
+    width: 140px; height: 140px; background: #1A1A1A;
+    border-radius: 32px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3); flex-shrink: 0;
+}
+.logo-box .mc { font-size: 56px; font-weight: 700; color: #D4A574; }
+.logo-box .hm { font-size: 11px; color: #FAFAF8; letter-spacing: 4px; opacity: 0.7; }
+.text-side { color: #fff; }
+.title { font-size: 46px; font-weight: 600; margin-bottom: 8px; }
+.title span { color: #D4A574; }
+.gold-line { width: 80px; height: 2px; background: #D4A574; margin-bottom: 14px; }
+.subtitle { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 20px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 20px; }
+.tags { display: flex; gap: 16px; }
+.tag { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 13px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="bg">🕯️</div>
+    <div class="content">
+        <div class="logo-box">
+            <div class="mc">MC</div>
+            <div class="hm">HANDMADE</div>
+        </div>
+        <div class="text-side">
+            <div class="title">Marea în <span>Ceară</span></div>
+            <div class="gold-line"></div>
+            <div class="subtitle">Lumânări decorative handmade din ceară de soia</div>
+            <div class="tags">
+                <div class="tag">CEARĂ DE SOIA</div>
+                <div class="tag">·</div>
+                <div class="tag">CERAMICĂ RECE</div>
+                <div class="tag">·</div>
+                <div class="tag">MADE IN ROMANIA</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

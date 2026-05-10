@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 1920px; overflow: hidden; background: #1A1A1A; font-family: 'Playfair Display', Georgia, serif; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.text-top { color: #fff; text-align: center; margin-bottom: 40px; }
+.text-top h2 { font-size: 48px; font-weight: 600; margin-bottom: 12px; }
+.text-top h2 span { color: #D4A574; }
+.text-top p { font-family: 'Inter', sans-serif; font-size: 24px; color: rgba(255,255,255,0.5); }
+.phone-frame { width: 380px; height: 760px; background: #333; border-radius: 40px; padding: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.phone-screen { width: 100%; height: 100%; background: #FAFAF8; border-radius: 32px; overflow: hidden; display: flex; flex-direction: column; }
+.cart-header { background: #1A1A1A; color: #fff; padding: 24px 20px; text-align: center; }
+.cart-header h2 { font-size: 20px; font-weight: 500; letter-spacing: 2px; }
+.cart-items { padding: 16px; flex: 1; }
+.cart-item { display: flex; gap: 14px; background: #fff; border-radius: 12px; padding: 14px; margin-bottom: 12px; border: 1px solid #F2F0ED; }
+.cart-item-img { width: 70px; height: 70px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
+.cart-item-img.warm { background: #fdf2e9; }
+.cart-item-img.rose { background: #fce4ec; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: #1A1A1A; }
+.cart-item-qty { font-family: 'Inter', sans-serif; font-size: 11px; color: #B8B5B0; margin-top: 4px; }
+.cart-item-price { font-size: 16px; font-weight: 600; color: #D4A574; margin-top: 6px; }
+.cart-summary { padding: 20px; background: #fff; border-top: 1px solid #F2F0ED; }
+.summary-row { display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 14px; color: #666; margin-bottom: 8px; }
+.summary-row.total { font-size: 18px; font-weight: 600; color: #1A1A1A; border-top: 1px solid #F2F0ED; padding-top: 12px; margin-top: 8px; }
+.summary-row.total .val { color: #D4A574; font-size: 22px; }
+.checkout-btn { width: 100%; background: #D4A574; color: #fff; border: none; padding: 16px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 1px; margin-top: 14px; text-align: center; }
+.free-ship { font-family: 'Inter', sans-serif; text-align: center; font-size: 12px; color: #4caf50; margin-top: 10px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="text-top">
+    <h2>Coș de <span>Cumpărături</span></h2>
+    <p>Comandă simplă și rapidă</p>
+</div>
+<div class="phone-frame">
+    <div class="phone-screen">
+        <div class="cart-header">
+            <h2>COȘUL TĂU</h2>
+        </div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="cart-item-img warm">🕯️</div>
+                <div class="cart-item-info">
+                    <div class="cart-item-name">Lumânare parfumată în scoică</div>
+                    <div class="cart-item-qty">Cantitate: 1</div>
+                    <div class="cart-item-price">59 RON</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-img rose">🎀</div>
+                <div class="cart-item-info">
+                    <div class="cart-item-name">Funda Elegantă parfumată</div>
+                    <div class="cart-item-qty">Cantitate: 2</div>
+                    <div class="cart-item-price">138 RON</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-img warm">🌿</div>
+                <div class="cart-item-info">
+                    <div class="cart-item-name">Set cadou natural</div>
+                    <div class="cart-item-qty">Cantitate: 1</div>
+                    <div class="cart-item-price">99 RON</div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <div class="summary-row"><span>Subtotal</span><span>296 RON</span></div>
+            <div class="summary-row"><span>Livrare</span><span style="color:#4caf50;">GRATUITĂ</span></div>
+            <div class="summary-row total"><span>Total</span><span class="val">296 RON</span></div>
+            <div class="checkout-btn">FINALIZEAZĂ COMANDA</div>
+            <div class="free-ship">✓ Transport gratuit peste 250 RON</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

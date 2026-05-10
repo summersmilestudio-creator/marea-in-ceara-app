@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 1920px; overflow: hidden; background: #1A1A1A; font-family: 'Playfair Display', Georgia, serif; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.text-top { color: #fff; text-align: center; margin-bottom: 40px; }
+.text-top h2 { font-size: 48px; font-weight: 600; margin-bottom: 12px; }
+.text-top h2 span { color: #D4A574; }
+.text-top p { font-family: 'Inter', sans-serif; font-size: 24px; color: rgba(255,255,255,0.5); }
+.phone-frame { width: 380px; height: 760px; background: #333; border-radius: 40px; padding: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.phone-screen { width: 100%; height: 100%; background: #FAFAF8; border-radius: 32px; overflow: hidden; display: flex; flex-direction: column; }
+.product-hero { height: 280px; background: linear-gradient(135deg, #fdf2e9, #f5e6d3); display: flex; align-items: center; justify-content: center; font-size: 120px; }
+.product-detail { padding: 24px 20px; flex: 1; }
+.product-category { font-family: 'Inter', sans-serif; font-size: 11px; color: #D4A574; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.product-title { font-size: 24px; font-weight: 500; color: #1A1A1A; margin-bottom: 12px; line-height: 1.3; }
+.product-desc { font-family: 'Inter', sans-serif; font-size: 13px; color: #888; line-height: 1.7; margin-bottom: 20px; }
+.product-specs { display: flex; gap: 16px; margin-bottom: 20px; }
+.spec { background: #F2F0ED; padding: 10px 14px; border-radius: 10px; text-align: center; }
+.spec-val { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #1A1A1A; }
+.spec-label { font-family: 'Inter', sans-serif; font-size: 10px; color: #B8B5B0; margin-top: 2px; }
+.price-row { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
+.price { font-size: 32px; font-weight: 600; color: #D4A574; }
+.buy-btn { font-family: 'Inter', sans-serif; background: #D4A574; color: #fff; border: none; padding: 14px 32px; border-radius: 50px; font-size: 14px; font-weight: 500; letter-spacing: 1px; }
+.delivery { font-family: 'Inter', sans-serif; font-size: 12px; color: #B8B5B0; margin-top: 16px; text-align: center; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="text-top">
+    <h2>Detalii <span>Produs</span></h2>
+    <p>Descriere completă și specificații</p>
+</div>
+<div class="phone-frame">
+    <div class="phone-screen">
+        <div class="product-hero">🕯️</div>
+        <div class="product-detail">
+            <div class="product-category">Lumânări parfumate</div>
+            <div class="product-title">Lumânare parfumată în scoică – ceară de soia</div>
+            <div class="product-desc">Lumânare decorativă realizată manual din ceară de soia pură, turnată într-un recipient ceramic handmade în formă de scoică.</div>
+            <div class="product-specs">
+                <div class="spec"><div class="spec-val">Ceară soia</div><div class="spec-label">Material</div></div>
+                <div class="spec"><div class="spec-val">~30h</div><div class="spec-label">Ardere</div></div>
+                <div class="spec"><div class="spec-val">Handmade</div><div class="spec-label">Realizare</div></div>
+            </div>
+            <div class="price-row">
+                <div class="price">59 RON</div>
+                <div class="buy-btn">ADAUGĂ ÎN COȘ</div>
+            </div>
+            <div class="delivery">🚚 Livrare gratuită peste 250 RON</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

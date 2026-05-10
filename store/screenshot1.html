@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 1920px; overflow: hidden; background: #1A1A1A; font-family: 'Playfair Display', Georgia, serif; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.text-top { color: #fff; text-align: center; margin-bottom: 40px; }
+.text-top h2 { font-size: 48px; font-weight: 600; margin-bottom: 12px; }
+.text-top h2 span { color: #D4A574; }
+.text-top p { font-family: 'Inter', sans-serif; font-size: 24px; color: rgba(255,255,255,0.5); }
+.phone-frame { width: 380px; height: 760px; background: #333; border-radius: 40px; padding: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.phone-screen { width: 100%; height: 100%; background: #FAFAF8; border-radius: 32px; overflow: hidden; }
+.shop-header { text-align: center; padding: 30px 20px 20px; border-bottom: 1px solid #F2F0ED; }
+.shop-header h1 { font-size: 22px; font-weight: 500; letter-spacing: 2px; color: #1A1A1A; }
+.shop-header p { color: #B8B5B0; font-family: 'Inter', sans-serif; font-size: 11px; margin-top: 4px; letter-spacing: 1px; }
+.products { padding: 16px; display: flex; flex-wrap: wrap; gap: 12px; }
+.product { width: 165px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #F2F0ED; }
+.product-img { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 60px; }
+.product-img.warm { background: linear-gradient(135deg, #fdf2e9, #f5e6d3); }
+.product-img.cool { background: linear-gradient(135deg, #e8f0f2, #d4e4e8); }
+.product-img.rose { background: linear-gradient(135deg, #fce4ec, #f8d0d8); }
+.product-img.green { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+.product-info { padding: 10px 12px; }
+.product-name { font-size: 12px; font-weight: 500; color: #1A1A1A; line-height: 1.3; }
+.product-price { font-size: 16px; font-weight: 600; color: #D4A574; margin-top: 6px; }
+.product-tag { font-family: 'Inter', sans-serif; font-size: 9px; color: #B8B5B0; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="text-top">
+    <h2>Magazin <span>Handmade</span></h2>
+    <p>Lumânări decorative din ceară de soia</p>
+</div>
+<div class="phone-frame">
+    <div class="phone-screen">
+        <div class="shop-header">
+            <h1>MAREA ÎN CEARĂ</h1>
+            <p>LUMÂNĂRI HANDMADE · CERAMICĂ RECE</p>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="product-img warm">🕯️</div>
+                <div class="product-info">
+                    <div class="product-name">Lumânare parfumată în scoică</div>
+                    <div class="product-price">59 RON</div>
+                    <div class="product-tag">Ceară de soia</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img cool">🐚</div>
+                <div class="product-info">
+                    <div class="product-name">Lumânare decorativă turcoaz</div>
+                    <div class="product-price">45 RON</div>
+                    <div class="product-tag">Ceramică rece</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img rose">🎀</div>
+                <div class="product-info">
+                    <div class="product-name">Funda Elegantă parfumată</div>
+                    <div class="product-price">69 RON</div>
+                    <div class="product-tag">Ediție limitată</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img green">🌿</div>
+                <div class="product-info">
+                    <div class="product-name">Set cadou natural</div>
+                    <div class="product-price">99 RON</div>
+                    <div class="product-tag">Set cadou</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
