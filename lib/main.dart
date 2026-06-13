@@ -49,11 +49,22 @@ class _ShopWebViewState extends State<ShopWebView> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageStarted: (url) {
+            // Privacy: disable any website analytics/tracking inside the app
+            // so the app does not collect data used to track the user (no ATT).
+            _controller.runJavaScript(
+              "try{window['ga-disable-G-JNM8P1M0DJ']=true;"
+              "window.gtag=function(){};window.dataLayer=[];"
+              "window.fbq=function(){};window._fbq=function(){};}catch(e){}",
+            );
             setState(() {
               _isLoading = true;
             });
           },
           onProgress: (progress) {
+            _controller.runJavaScript(
+              "try{window['ga-disable-G-JNM8P1M0DJ']=true;"
+              "window.gtag=function(){};window.fbq=function(){};}catch(e){}",
+            );
             setState(() {
               _progress = progress / 100;
             });
