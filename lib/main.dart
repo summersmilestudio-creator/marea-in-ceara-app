@@ -41,6 +41,22 @@ class _ShopWebViewState extends State<ShopWebView> {
   bool _isLoading = true;
   double _progress = 0;
 
+  // Privacy (App Store guideline 5.1.2(i)): inside the app we never track the
+  // user. We (1) pre-set the website's cookie-consent to "necessary only" so
+  // the cookie prompt never appears, (2) remove the banner if it slipped in,
+  // and (3) neutralise Google Analytics + the Facebook Pixel so no tracking
+  // data is collected. This runs at every load stage to stay ahead of the
+  // site's own scripts.
+  static const String _noTrackingJs =
+      "try{"
+      "document.cookie='mareainceara_cookie_consent=necessary;path=/;max-age=31536000;SameSite=Lax';"
+      "window['ga-disable-G-JNM8P1M0DJ']=true;"
+      "window.gtag=function(){};window.dataLayer=[];"
+      "window.fbq=function(){};window._fbq=function(){};"
+      "var b=document.getElementById('cookieBanner');"
+      "if(b&&b.parentNode){b.parentNode.removeChild(b);}"
+      "}catch(e){}";
+
   @override
   void initState() {
     super.initState();
@@ -49,27 +65,19 @@ class _ShopWebViewState extends State<ShopWebView> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageStarted: (url) {
-            // Privacy: disable any website analytics/tracking inside the app
-            // so the app does not collect data used to track the user (no ATT).
-            _controller.runJavaScript(
-              "try{window['ga-disable-G-JNM8P1M0DJ']=true;"
-              "window.gtag=function(){};window.dataLayer=[];"
-              "window.fbq=function(){};window._fbq=function(){};}catch(e){}",
-            );
+            _controller.runJavaScript(_noTrackingJs);
             setState(() {
               _isLoading = true;
             });
           },
           onProgress: (progress) {
-            _controller.runJavaScript(
-              "try{window['ga-disable-G-JNM8P1M0DJ']=true;"
-              "window.gtag=function(){};window.fbq=function(){};}catch(e){}",
-            );
+            _controller.runJavaScript(_noTrackingJs);
             setState(() {
               _progress = progress / 100;
             });
           },
           onPageFinished: (url) {
+            _controller.runJavaScript(_noTrackingJs);
             setState(() {
               _isLoading = false;
             });
