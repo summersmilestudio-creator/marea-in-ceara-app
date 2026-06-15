@@ -4,6 +4,8 @@
 <dict>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Permisiunea ne ajută să măsurăm performanța magazinului și să-ți arătăm conținut mai relevant. Poți refuza, iar magazinul va funcționa normal.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleDevelopmentRegion</key>

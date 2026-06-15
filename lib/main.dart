@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'tracking_service.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +41,9 @@ class _ShopWebViewState extends State<ShopWebView> {
   late final WebViewController _controller;
   bool _isLoading = true;
   double _progress = 0;
+  // Set after the App Tracking Transparency prompt is answered. When the user
+  // does NOT authorize tracking we neutralise the site's tracking scripts.
+  bool _trackingAllowed = false;
 
   // Privacy (App Store guideline 5.1.2(i)): inside the app we never track the
   // user. We (1) pre-set the website's cookie-consent to "necessary only" so
@@ -57,6 +61,14 @@ class _ShopWebViewState extends State<ShopWebView> {
       "if(b&&b.parentNode){b.parentNode.removeChild(b);}"
       "}catch(e){}";
 
+  /// Inject the no-tracking script only while the user has NOT authorized
+  /// tracking through ATT. When authorized, the site's analytics may run.
+  void _applyTrackingPolicy() {
+    if (!_trackingAllowed) {
+      _controller.runJavaScript(_noTrackingJs);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -65,19 +77,19 @@ class _ShopWebViewState extends State<ShopWebView> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageStarted: (url) {
-            _controller.runJavaScript(_noTrackingJs);
+            _applyTrackingPolicy();
             setState(() {
               _isLoading = true;
             });
           },
           onProgress: (progress) {
-            _controller.runJavaScript(_noTrackingJs);
+            _applyTrackingPolicy();
             setState(() {
               _progress = progress / 100;
             });
           },
           onPageFinished: (url) {
-            _controller.runJavaScript(_noTrackingJs);
+            _applyTrackingPolicy();
             setState(() {
               _isLoading = false;
             });
@@ -89,8 +101,15 @@ class _ShopWebViewState extends State<ShopWebView> {
           },
         ),
       )
-      ..setUserAgent('MareaInCeara/1.0 Android')
-      ..loadRequest(Uri.parse('https://mareainceara.ro/'));
+      ..setUserAgent('MareaInCeara/1.0 Android');
+
+    // Ask for tracking permission BEFORE loading the site, so no tracking data
+    // is collected without consent (App Store guideline 5.1.2(i)). Once the
+    // prompt is answered we load the shop.
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      _trackingAllowed = await TrackingService.requestIfNeeded();
+      _controller.loadRequest(Uri.parse('https://mareainceara.ro/'));
+    });
   }
 
   void _showError(String message) {
